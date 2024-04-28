@@ -69,7 +69,7 @@ main(){
 						cin >> bases;
 						if (bases != 'A' && bases !='E' && bases != 'M'){
 							cout << "[ERRO] O valor inserido deve ser A, E ou M ";
-							exit(NULL);	 
+							break;	
 						}else{
 							switch(bases){
 								case 'A':
@@ -105,7 +105,7 @@ main(){
 						cin >> toppings;
 						if (toppings != 'C' && toppings !='E' && toppings != 'T'){
 							cout << "[ERRO] O valor inserido deve ser C, E ou T ";
-							exit(NULL);	 
+							break;	  
 						}else{
 							switch(toppings){
 								case 'C':
@@ -140,7 +140,7 @@ main(){
 						cin >> crunches;
 						if (crunches != 'C' && crunches !='E'){
 							cout << "[ERRO] O valor inserido deve ser C ou E ";
-							exit(NULL);	 
+							break;	  
 						}else{
 							switch(crunches){
 								case 'C':
@@ -170,7 +170,7 @@ main(){
 						cin >> proteinas;
 						if (proteinas != 'O' && proteinas !='S'){
 							cout << "[ERRO] O valor inserido deve ser O ou S ";
-							exit(NULL);	 
+							break;	  
 						}else{
 							switch(proteinas){
 								case 'O':
@@ -191,12 +191,79 @@ main(){
 						break;
 					}
 				case 5:
-					
+					if(nNut < 1){
+						cout << "Seu limite eh de 1 nut." << endl;
+						cout << "Valor ja gasto com nut: R$" << vNut << endl;
+						cout << "Nut:  " << nNut << "/1";
+						cout << endl << "A- Amendoim " << endl;
+						cin >> nut;
+						if (nut != 'A'){
+							cout << "[ERRO] O valor inserido deve ser A";
+							break;	 
+						}else{
+							switch(nut){
+								case 'A':
+									valor += 3;
+									vNut += 3;
+									nNut++;
+									break;
+							}
+						}
+						break;
+					}else{
+						cout << "Voce ja atingiu o numero limite de nut." << endl;
+						break;
+					}
 				case 6:
-					
+					if(nMolhos < ){
+						cout << "Seu limite eh de 1 molho." << endl;
+						cout << "Valor ja gasto com molhos: R$" << vMolhos << endl;
+						cout << "Molhos:  " << nMolhos << "/1";
+						cout << endl << "P- Ponzu (+R$1.00)" << endl;
+						cout << endl << "T- Teriaky (+R$1.00)" << endl;
+						cout << endl << "S- Shoyu " << endl;
+						cin >> molho;
+						if (molho != 'P' && molho != 'T' && molho != 'S'){
+							cout << "[ERRO] O valor inserido deve ser P, T ou S";
+							break;	 
+						}else{
+							switch(molho){
+								case 'P':
+									valor += 3;
+									vMolhos += 3;
+									nMolhos++;
+									break;
+								case 'T':
+									valor += 3;
+									vMolhos += 3;
+									nMolhos++;
+									break;
+								case 'S':
+									valor += 2;
+									vMolhos += 2;
+									nMolhos++;
+									break;
+							}
+						}
+						break;
+					}else{
+						cout << "Voce ja atingiu o numero limite de molhos." << endl;
+						break;
+					}
 				case 7:
 					break;
 			}	
 		}
 	}
+	cout << "Finalizando pedido..." << endl;
+	if(tamanho == 'P'){
+	    cout << "Voce pediu um poke pequeno com as seguintes opcoes: " << << endl;
+	}
+	else if(tamanho == 'M'){
+	    cout << "Voce pediu um poke medio com as seguintes opcoes: " << << endl;
+	}
+	else if(tamanho == 'G'){
+	    cout << "Voce pediu um poke grande com as seguintes opcoes: " << << endl;
+	}
+	
 }
