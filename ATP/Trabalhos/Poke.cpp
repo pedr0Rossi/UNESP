@@ -4,23 +4,30 @@
 #include<ctime>
 using namespace std;
 
-main(){
-	char tamanho, bases, toppings, crunches, proteinas, nut, molho, nBases, nToppings, nCrunches, nProteinas, nNut, nMolhos; 
-	int montar, menu;
-	float vBases, vToppings, vCrunches, vProteinas, vNut, vMolhos, valor;
-	nBases = 0;
+char tamanho, bases, toppings, crunches, proteinas, nut, molho;
+float vBases, vToppings, vCrunches, vProteinas, vNut, vMolhos, valor, valorTotal, montar, nBases, nToppings, nCrunches, nProteinas, nNut, nMolhos, encerrar;
+int menu;
+void resetar(){
+    nBases = 0;
 	nToppings = 0;
 	nCrunches = 0;
 	nProteinas = 0;
-	nNut = 0;
+	nNut = 0; 
 	nMolhos = 0;
 	vBases = 0;
 	vMolhos = 0;
 	vToppings = 0;
-	vCrunches = 0;
 	vProteinas = 0;
-	vNut = 0; 
-	valor = 0;
+	vNut = 0;
+	valor = 0; 
+    vCrunches = 0;
+	vProteinas = 0;
+	vMolhos = 0;
+	nMolhos = 0;
+}
+main(){
+    resetar();
+    valorTotal = 0;
 	cout << "---------------------------" << endl;
 	cout << "Bem vindo ao Demac Poke!" << endl;
 	cout << "---------------------------" << endl;
@@ -68,8 +75,8 @@ main(){
 						cout << endl << "M- Mix de Folhas " << endl;
 						cin >> bases;
 						if (bases != 'A' && bases !='E' && bases != 'M'){
-							cout << "[ERRO] O valor inserido deve ser A, E ou M ";
-							break;	
+							cout << "[ERRO] O valor inserido deve ser A, E ou M " << endl;
+							continue;	
 						}else{
 							switch(bases){
 								case 'A':
@@ -89,23 +96,23 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de bases." << endl;
-						break;
+						continue;
 					}
 				case 2:
 					if(nToppings < 3){
 						cout << "Seu limite eh de 3 toppings." << endl;
-						cout << "Valor ja gasto com toppigs: R$" << vToppings << endl;
+						cout << "Valor ja gasto com toppings: R$" << vToppings << endl;
 						cout << "Toppings  " << nToppings << "/3";
-						cout << endl << "C- Cenouro " << endl;
+						cout << endl << "C- Cenoura " << endl;
 						cout << endl << "E- Edamame (+R$1.00)" << endl;
 						cout << endl << "T- Tomate Cereja " << endl;
 						cin >> toppings;
 						if (toppings != 'C' && toppings !='E' && toppings != 'T'){
-							cout << "[ERRO] O valor inserido deve ser C, E ou T ";
-							break;	  
+							cout << "[ERRO] O valor inserido deve ser C, E ou T " << endl;
+							continue;	  
 						}else{
 							switch(toppings){
 								case 'C':
@@ -125,10 +132,10 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de toppings." << endl;
-						break;
+						continue;
 					}
 				case 3:
 					if(nCrunches < 2){
@@ -139,8 +146,8 @@ main(){
 						cout << endl << "E- Palha de Nori" << endl;
 						cin >> crunches;
 						if (crunches != 'C' && crunches !='E'){
-							cout << "[ERRO] O valor inserido deve ser C ou E ";
-							break;	  
+							cout << "[ERRO] O valor inserido deve ser C ou E " << endl;
+							continue;	  
 						}else{
 							switch(crunches){
 								case 'C':
@@ -155,10 +162,10 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de crunches." << endl;
-						break;
+						continue;
 					}
 				case 4:
 					if(nProteinas < 2){
@@ -169,8 +176,8 @@ main(){
 						cout << endl << "S- Shimeji" << endl;
 						cin >> proteinas;
 						if (proteinas != 'O' && proteinas !='S'){
-							cout << "[ERRO] O valor inserido deve ser O ou S ";
-							break;	  
+							cout << "[ERRO] O valor inserido deve ser O ou S " << endl;
+							continue;	  
 						}else{
 							switch(proteinas){
 								case 'O':
@@ -185,10 +192,10 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de proteinas." << endl;
-						break;
+						continue;
 					}
 				case 5:
 					if(nNut < 1){
@@ -198,8 +205,8 @@ main(){
 						cout << endl << "A- Amendoim " << endl;
 						cin >> nut;
 						if (nut != 'A'){
-							cout << "[ERRO] O valor inserido deve ser A";
-							break;	 
+							cout << "[ERRO] O valor inserido deve ser A" << endl;
+							continue;	 
 						}else{
 							switch(nut){
 								case 'A':
@@ -209,13 +216,13 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de nut." << endl;
-						break;
+						continue;
 					}
 				case 6:
-					if(nMolhos < ){
+					if(nMolhos < 2){
 						cout << "Seu limite eh de 1 molho." << endl;
 						cout << "Valor ja gasto com molhos: R$" << vMolhos << endl;
 						cout << "Molhos:  " << nMolhos << "/1";
@@ -224,8 +231,8 @@ main(){
 						cout << endl << "S- Shoyu " << endl;
 						cin >> molho;
 						if (molho != 'P' && molho != 'T' && molho != 'S'){
-							cout << "[ERRO] O valor inserido deve ser P, T ou S";
-							break;	 
+							cout << "[ERRO] O valor inserido deve ser P, T ou S" << endl;
+							continue;	 
 						}else{
 							switch(molho){
 								case 'P':
@@ -245,25 +252,36 @@ main(){
 									break;
 							}
 						}
-						break;
+						continue;
 					}else{
 						cout << "Voce ja atingiu o numero limite de molhos." << endl;
-						break;
+						continue;
 					}
 				case 7:
 					break;
 			}	
+		    cout << "Finalizando pedido..." << endl;
+	        if(tamanho == 'P'){
+	            cout << "Voce pediu um poke pequeno com as seguintes opcoes: " << endl;
+	        }
+	        else if(tamanho == 'M'){
+	            cout << "Voce pediu um poke medio com as seguintes opcoes: " << endl;
+	        }
+	        else if(tamanho == 'G'){
+	            cout << "Voce pediu um poke grande com as seguintes opcoes: " << endl;
+	        } 
+	        cout << "Deseja fazer outro pedido?" << endl;
+	        cout << "1- Fazer outro pedido" << endl;
+	        cout << "2- Encerrar" << endl;
+	        cin >> encerrar;
+	        if(encerrar == 1){
+	            valorTotal += valor;
+	            resetar();
+	            continue;  
+	        }else{
+	            break;
+	        }
+	 
 		}
 	}
-	cout << "Finalizando pedido..." << endl;
-	if(tamanho == 'P'){
-	    cout << "Voce pediu um poke pequeno com as seguintes opcoes: " << << endl;
-	}
-	else if(tamanho == 'M'){
-	    cout << "Voce pediu um poke medio com as seguintes opcoes: " << << endl;
-	}
-	else if(tamanho == 'G'){
-	    cout << "Voce pediu um poke grande com as seguintes opcoes: " << << endl;
-	}
-	
 }
