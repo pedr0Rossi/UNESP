@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    int n = 0;
+    int y = 0;
+    int codigo[100];
+    float ph[100];
+    char turbidez[100];
+    
+    printf("Digite a quantidade de amostras a serem analisadas: (entre 30 e 100) ");
+    scanf("%d", &n);
+    
+    for(int i=0; i<n; i++){
+        printf("Informe o código da localidade: ");
+        scanf("%d", &codigo[i]);
+        printf("Informe o pH: ");
+        scanf("%f", &ph[i]);
+        printf("Informe a turbidez (L - Limpa | S - Sujo | C - Contaminado)");
+        scanf(" %c", &turbidez[i]);
+        y++;
+    }
+    for(int i=0; i<y; i++){
+        printf("Amostra %d: Código: %d - PH: %.2f - Turbidez: %c", i, codigo[i], ph[i], turbidez[i]);
+    }
+}

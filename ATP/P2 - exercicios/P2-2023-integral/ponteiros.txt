@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    //endereços 1002, 1004 e 1006
+    int bau[3] = {47, 774, 474};
+    //endereço 1008, 1010, 1012, 1014
+    int arca[] = {3, 5, 7, 11};
+    //endereço 1016, 1018
+    char pre[] = {65, 97};
+    //prt = 1002
+    int *ptr = &bau[0];
+    //1012
+    int *q = &arca[2];
+    //Ele se torna uma cadeia de caracteres ASCII correspondentes ao número
+    char *s = pre;
+    //1002
+    cout << *ptr << endl;
+    //474
+    cout << *(ptr+2) << endl;
+    //1012
+    cout << *q << endl;
+    //474
+    cout << *(q-3) << endl;
+    //11
+    cout << *(q+1) << endl;
+    //Caractere ASCII correspondente ao número
+    cout << s[0] << endl;
+    *q = 8;
+    // //?
+    // cout << ptr[5] << endl;
+}

@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int primos[1024] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    int divisiveis[1024];
+    int nPrimo = 0; int qtdePrimo = 0; int vDivisao; int qtdeDivisiveis;
+    
+    for(int i=0; i<25; i++){
+        nPrimo = primos[i];
+        if(nPrimo + 2 == primos[i+1]){
+            qtdePrimo++;
+        }
+    }
+    cout << "Existem " << qtdePrimo << " números primos na lista." << endl;
+    
+    cout << "Digite um valor pelo qual você quer dividir os números: ";
+    cin >> vDivisao;
+    
+    for(int i=0; i<25; i++){
+        if(vDivisao%primos[i] == 0){
+            divisiveis[qtdeDivisiveis] = primos[i];
+            qtdeDivisiveis++;
+        }
+    }
+    for(int i=0; i<qtdeDivisiveis; i++){
+        cout << endl << divisiveis[i];
+    }
+}

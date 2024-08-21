@@ -1,0 +1,33 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+     int array[1000];
+     int impares=0; int nImparesConsecutivos=0;
+     int imparesConsecutivos[1000];
+     int n;
+     
+     for(int i=0; i<1000; i++){
+         cout << "int: ";
+         cin >> n;
+         if(n==0){
+             break;
+         }
+         array[i] = n;
+         if(n%2!=0){
+            impares++;
+            if(array[i-1] % 2 != 0){
+               imparesConsecutivos[nImparesConsecutivos] = array[i-1];
+               nImparesConsecutivos++;
+               imparesConsecutivos[nImparesConsecutivos] = n;
+               nImparesConsecutivos++;
+            }
+         }
+     }
+     cout << "Foram impressos " << impares << " números impares" << endl;
+     cout << "Números consecutivos: " << endl;
+     for(int j=0; j<nImparesConsecutivos; j=j+2){
+         cout << imparesConsecutivos[j] << " e " << imparesConsecutivos[j+1];
+     }
+}

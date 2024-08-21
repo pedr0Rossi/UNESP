@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+     int n = 0;
+     int codigo[10];
+     int brilho[10];
+     char cor[10];
+     
+     cout << "informe a quantidade de dados: ";
+     cin >> n;
+     
+     for(int i=0; i<n; i++){
+        cout << "Informe o codigo (entre 0 e 9999): ";
+        cin >> codigo[i];
+        cout << "Informe o brilho: ";
+        cin >> brilho[i];
+        cout << "Informe a cor (A - Azul | V - Vermelho | B - Branca): ";
+        cin >> cor[i];
+     }
+     for(int j=0; j<n; j++){
+         cout << "Dado " << j+1 << ": " << endl;
+         cout << "Codigo: " << codigo[j] << endl;
+         cout << "Brilho: " << brilho[j] << endl;
+         cout << "Cor: " << cor[j] << endl;
+     }
+}
